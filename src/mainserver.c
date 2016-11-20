@@ -165,6 +165,7 @@ int main(int argc, char *argv[])
 								//strcpy(comando,"gnome-terminal -x ./gameserver ");
                                 strcpy(comando,"./gameserver ");
 								strcat(comando,chporta);
+                                strcat(comando, " &");
 								system(comando);
 								iwait=1;	//segnala che il gameserver è in attesa di un secondo giocatore
 								portwait=i;
