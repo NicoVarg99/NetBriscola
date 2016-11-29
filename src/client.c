@@ -413,7 +413,9 @@ void loop(GtkWidget * widget, gpointer data)
 
 							//riceve l'id del giocatore, il turno e lo stato della mano
 							mioid=(int)(mess[4][0]-'0');//id
+							printf("DEBUG:\t\tMioId:\t%d",mioid);
 							turno=(int)(mess[4][1]-'0');//turno
+							printf("DEBUG:\t\tTurno:\t%d",turno);
 							stmano=(int)(mess[4][2]-'0');//stato
 							if(n==34)
 								if(turno==0)
@@ -422,7 +424,9 @@ void loop(GtkWidget * widget, gpointer data)
 									vincitoremanoold=inverti(mioid);
 							else
 								vincitoremanoold=vincitoremano;
+							printf("DEBUG:\t\tVincitoreManoOld:\t%d",vincitoremanoold);
 							vincitoremano=(int)(mess[4][3]-'0');//vincitore
+							printf("DEBUG:\t\tVincitoreMano:\t%d",vincitoremano);
 
 
 							//riceve le carte in campo
@@ -667,12 +671,12 @@ void fine(int m)
 	gtk_widget_show(label);
 
 	if(m!=1){
-		str=(char*)malloc(sizeof(char)*(strlen(nomeavversario)));
-		strcpy(str,nomeavversario);
-	}
-	else{
 		str=(char*)malloc(sizeof(char)*(strlen(myUsername)));
 		strcpy(str,myUsername);
+	}
+	else{
+		str=(char*)malloc(sizeof(char)*(strlen(nomeavversario)));
+		strcpy(str,nomeavversario);
 	}
 	label=gtk_label_new(str);
 	gtk_widget_modify_fg (label, GTK_STATE_NORMAL, &color);
@@ -765,6 +769,8 @@ void intraMsg(int m)
 	GtkWidget *label,*button,*image,*table;
 	table=gtk_table_new(6,3,FALSE);
 	gtk_container_add(GTK_CONTAINER(window2),table);
+
+	printf("DEBUG:\t\tM: %d", m);
 
 	if(m==mioid)
 	{
