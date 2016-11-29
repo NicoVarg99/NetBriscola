@@ -417,7 +417,7 @@ void loop(GtkWidget * widget, gpointer data)
 							turno=(int)(mess[4][1]-'0');//turno
 							printf("DEBUG:\t\tTurno:\t%d",turno);
 							stmano=(int)(mess[4][2]-'0');//stato
-							if(n==34)
+							if(n==32)
 								if(turno==0)
 									vincitoremanoold=mioid;
 								else
