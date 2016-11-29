@@ -392,7 +392,7 @@ void loop(GtkWidget * widget, gpointer data)
 							mano[1].seme=(int)(mess[1][3]-'0');
 							mano[1].val=(int)(mess[1][4]-'0');
 							mano[2].seme=(int)(mess[1][6]-'0');
-							mano[2].val=(int)(mess[1][7]-'0');+
+							mano[2].val=(int)(mess[1][7]-'0');
 
 							//trasforma eventuali 'x' contenute nel messaggio in 10
 							if(mano[0].val=='x'-'0')
