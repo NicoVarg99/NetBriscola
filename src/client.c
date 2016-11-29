@@ -416,7 +416,10 @@ void loop(GtkWidget * widget, gpointer data)
 							turno=(int)(mess[4][1]-'0');//turno
 							stmano=(int)(mess[4][2]-'0');//stato
 							if(n==34)
-								vincitoremanoold=turno;
+								if(turno==0)
+									vincitoremanoold=mioid;
+								else
+									vincitoremanoold=inverti(mioid);
 							else
 								vincitoremanoold=vincitoremano;
 							vincitoremano=(int)(mess[4][3]-'0');//vincitore
@@ -763,7 +766,7 @@ void intraMsg(int m)
 	table=gtk_table_new(6,3,FALSE);
 	gtk_container_add(GTK_CONTAINER(window2),table);
 
-	if(vincitoremanoold==mioid)
+	if(m==mioid)
 	{
 		label=gtk_label_new("Carta giocata");
 		gtk_widget_modify_fg (label, GTK_STATE_NORMAL, &color);
