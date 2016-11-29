@@ -415,7 +415,10 @@ void loop(GtkWidget * widget, gpointer data)
 							mioid=(int)(mess[4][0]-'0');//id
 							turno=(int)(mess[4][1]-'0');//turno
 							stmano=(int)(mess[4][2]-'0');//stato
-							vincitoremanoold=vincitoremano;
+							if(n==34)
+								vincitoremanoold=turno;
+							else
+								vincitoremanoold=vincitoremano;
 							vincitoremano=(int)(mess[4][3]-'0');//vincitore
 
 
