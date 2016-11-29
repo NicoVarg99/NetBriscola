@@ -1,12 +1,5 @@
 #!/bin/bash
 
-if [ "`pkg-config gtk+-2.0 --libs`" == "" ];
-then
-  echo -e "\e[1mDipendenze mancanti: gtk\e[0m"
-  echo "Inserire la password per installarli..."
-  sudo apt-get install libgtk2.0-0
-fi
-
 echo -e "\e[3;1mTutte le dipendenze sono soddisfatte..."
 echo -e "Compilazione di: launcher.c\e[0m\e[3m"
 gcc `pkg-config gtk+-2.0 --cflags` -Wall -o launcher src/launcher.c -lm `pkg-config gtk+-2.0 --libs`

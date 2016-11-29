@@ -637,9 +637,15 @@ void fine(int m)
 
 	char *str;
 
+	if(m==1){
+		str=(char*)malloc(sizeof(char)*(strlen(myUsername)));
+		strcpy(str,myUsername);
+	}
+	else{
+		str=(char*)malloc(sizeof(char)*(strlen(nomeavversario)));
+		strcpy(str,nomeavversario);
+	}
 
-	str=(char*)malloc(sizeof(char)*(strlen(myUsername)));
-	strcpy(str,myUsername);
 	label=gtk_label_new(str);
 	gtk_widget_modify_fg (label, GTK_STATE_NORMAL, &color);
 	gtk_widget_modify_font(GTK_WIDGET(label), font_desc);
@@ -654,8 +660,14 @@ void fine(int m)
 	gtk_table_attach_defaults(GTK_TABLE(table),label,3,5,2,3);
 	gtk_widget_show(label);
 
-	str=(char*)malloc(sizeof(char)*(strlen(nomeavversario)));
-	strcpy(str,nomeavversario);
+	if(m!=1){
+		str=(char*)malloc(sizeof(char)*(strlen(nomeavversario)));
+		strcpy(str,nomeavversario);
+	}
+	else{
+		str=(char*)malloc(sizeof(char)*(strlen(myUsername)));
+		strcpy(str,myUsername);
+	}
 	label=gtk_label_new(str);
 	gtk_widget_modify_fg (label, GTK_STATE_NORMAL, &color);
 	gtk_widget_modify_font(GTK_WIDGET(label), font_desc);
